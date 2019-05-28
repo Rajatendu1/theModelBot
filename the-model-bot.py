@@ -19,8 +19,11 @@ os.chdir('models')
 
 # iterates over pictures in models folder
 for model_image in os.listdir('.'):
-    api.update_with_media(model_image)
-    time.sleep(3)
+    try:
+        api.update_with_media(model_image)
+        time.sleep(3)
+    except:
+        continue
 
 
 
